@@ -24,6 +24,7 @@ export function Room () {
     const [newQuestion, setNewQuestion] = useState('')
     const roomId = params.id 
     const { title, questions } = useRoom(roomId)
+    const [isAdm, setIsAdm] = useState(false);
 
     async function handleSendQuestion (event: FormEvent) {
         event.preventDefault()
