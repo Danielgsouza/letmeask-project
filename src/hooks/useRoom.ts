@@ -31,7 +31,7 @@ type QuestionType = {
     likeId: string | undefined
     
   }
-
+// eslint-disable-next-line
   type useRoomRetorn = {
     roomAuthorId: string
   }
