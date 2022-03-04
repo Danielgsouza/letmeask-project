@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { useHistory } from 'react-router-dom'
+import { toast } from "react-toastify"
 import { database } from "../services/firebase"
 import { useAuth } from "./useAuth"
 
@@ -30,15 +32,37 @@ type QuestionType = {
     
   }
 
+  type useRoomRetorn = {
+    roomAuthorId: string
+  }
+
 export function useRoom (roomId: string) {
+    const history = useHistory()
     const { user } = useAuth()
     const [questions, setQuestions] = useState<QuestionType[]>([])
     const [title, setTitle] = useState('')
+    const [ roomAuthorId, setRoomAuthorId ] = useState('')
+
     useEffect(() =>{
         const roomRef = database.ref(`rooms/${roomId}`)
 
         roomRef.on('value', room => {
+          
+          const roomExist = room.exists()
+
+          if(!roomExist) {
+            toast.error('Sala Não Encontrada!')
+            return history.replace('/')
+          }
+
           const databaseRoom = room.val()
+
+          if(databaseRoom.endedAt) {
+            toast.error('Está sala já foi encerrada!')
+            return history.replace('/')
+          }
+
+
           const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {}
     
           const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
@@ -54,14 +78,14 @@ export function useRoom (roomId: string) {
             }
           })
           setTitle(databaseRoom.title)
-         
+          setRoomAuthorId(databaseRoom.authorId)
           setQuestions(parsedQuestions)
         })
         return () => {
           roomRef.off('value')
         }
 
-    }, [  roomId, user?.id])
+    }, [ roomAuthorId, history,  roomId, user?.id])
 
-      return { questions, title }
+      return { questions, title, roomAuthorId }
 }

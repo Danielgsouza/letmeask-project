@@ -72,6 +72,10 @@ form textarea {
     justify-content: space-between;
     align-items: center;
     margin-top: 16px;
+
+    button {
+        cursor: pointer;
+    }
 }
 
 .user-info {

@@ -1,4 +1,4 @@
-import { FormEvent,  useState } from 'react'
+import { FormEvent,  useEffect,  useState } from 'react'
 import { Link, useHistory, useParams } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import { useRoom } from '../hooks/useRoom'
@@ -18,13 +18,17 @@ type RoomParams = {
 }
 
 export function Room () {
-    const { user } = useAuth()
+    
     const history = useHistory()
     const params = useParams<RoomParams>()
-    const [newQuestion, setNewQuestion] = useState('')
     const roomId = params.id 
-    const { title, questions } = useRoom(roomId)
-    //const [isAdm, setIsAdm] = useState(false);
+
+    const [newQuestion, setNewQuestion] = useState('')
+    const [isAdm, setIsAdm] = useState(false);
+
+    const { user, signInWithGoogle } = useAuth()
+    const { title, questions, roomAuthorId } = useRoom(roomId)
+    
 
     async function handleSendQuestion (event: FormEvent) {
         event.preventDefault()
@@ -61,14 +65,26 @@ export function Room () {
         }
     }
 
+    useEffect(() => {
+        if(user?.id && roomAuthorId) {
+            if(user.id === roomAuthorId) {
+                setIsAdm(true)
+            }
+        }
+    }, [history, roomAuthorId, roomId, user])
+
     return (
         <div id="page-room">
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" className="logo-responsivo" />
                     <div className="responsive">
-                        <RoomCode code={roomId} />
-                        <Button data-cy="exit-room" type="button" onClick={() => history.push("/")}>Sair da sala</Button>
+                        {!isAdm && (
+                           <>
+                            <RoomCode code={roomId} /><Button data-cy="exit-room" type="button" onClick={() => history.push("/")}>Sair da sala</Button>
+                           </>
+                        )}
+                        
                     </div>                   
                 </div>
             </header>
@@ -77,7 +93,9 @@ export function Room () {
                 <div className="room-title">
                     <h1>Sala {title}</h1>
                     {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
-                    <Link className="see-how-mobile" to={`/admin/rooms/${roomId}`}>Ver como administrador</Link>
+                    {isAdm && (
+                        <Link className="see-how-mobile" to={`/admin/rooms/${roomId}`}>Ver como administrador</Link>
+                    )}
                 </div>
                 
                 <form onSubmit={handleSendQuestion}>
@@ -90,7 +108,7 @@ export function Room () {
                                 <span>{user.name}</span>
                             </div>
                         ) : (
-                            <span>Para enviar uma pergunta,<button>faça seu login</button>.</span>
+                            <span>Para enviar uma pergunta ou dar likes,{" "}<button type="button" onClick={signInWithGoogle}>Faça seu login</button>.</span>
                         )}
                         <Button type="submit" disabled={!user}>Enviar Pergunta</ Button>
                     </div>
