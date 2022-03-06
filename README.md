@@ -22,7 +22,7 @@ https://letmeask-project.vercel.app
 
 O letmeask foi pensado e desenvolvido como forma de ajudar no dialogo entre pessoas que precisam tirar dúvidas sobre um determinado assunto. Pensando nisso a #rocketseat realizou um evento chamado #NextLevelWeek que teve como objetivo justamente o desenvolvimento de um projeto que consiste no ranqueamento de perguntas mais frequentes pela comunidade.
 
-##Versão Web:
+## Versão Web:
 
 ![web](https://github.com/Danielgsouza/letmeask-project/blob/main/src/assets/images/Home.png)
 <br />
