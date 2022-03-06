@@ -79,9 +79,10 @@ export function Room () {
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" className="logo-responsivo" />
                     <div className="responsive">
+                        <RoomCode code={roomId} />
                         {!isAdm && (
                            <>
-                            <RoomCode code={roomId} /><Button data-cy="exit-room" type="button" onClick={() => history.push("/")}>Sair da sala</Button>
+                           <Button data-cy="exit-room" type="button" onClick={() => history.push("/")}>Sair da sala</Button>
                            </>
                         )}
                         
