@@ -1,7 +1,7 @@
 <br />
 <br />
 <h1 align="center">
-  <img alt="letmeask" src=".github/assets/logo.svg" width="420px" /> 
+  <img alt="letmeask" src="https://github.com/Danielgsouza/letmeask-project/blob/main/src/assets/images/logo.svg" width="420px" /> 
   <br />
   <br />
   NextJS | Firebase | Typescript
@@ -45,7 +45,7 @@ das lives sejam as mais ranqueadas ou seja, as dúvidas que são mais frequentes
 
 <br />
 
-## :rocket: Milha extra
+## :rocket: Implementações extras
 <br />
 
 Foram adicionados algumas funcionalidades extras afim de melhorar o projeto, lembarndo que este projeto doi desewnvolvido utilizando o NextJS como base. 
