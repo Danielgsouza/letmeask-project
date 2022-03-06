@@ -4,12 +4,11 @@
   <img alt="letmeask" src="https://github.com/Danielgsouza/letmeask-project/blob/main/src/assets/images/logo.svg" width="420px" /> 
   <br />
   <br />
-  NextJS | Firebase | Typescript
+  ReactJS | Firebase | Typescript
 </h1>
 
 <p align="center">
   <img alt="Rocketseat" src="https://img.shields.io/badge/Created%20by%3A-Rocketseat-%236D5CCD" />
-  <img alt="EddyPBR" src="https://img.shields.io/badge/Developed%20by%3A-EddyPBR-%23DD3B3F" />
   <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-%2398C611" />
   <img alt="Typescript" src="https://img.shields.io/badge/Main%20lenguage-Typescript-%232F74C0" /> <br />
 </p> 
@@ -18,6 +17,8 @@
 
 ## :bookmark: Resumo
 <br />
+
+https://letmeask-project.vercel.app
 
 O letmeask foi pensado e desenvolvido como forma de ajudar no dialogo entre pessoas que precisam tirar dúvidas sobre um determinado assunto. Pensando nisso a #rocketseat realizou um evento chamado #NextLevelWeek que teve como objetivo justamente o desenvolvimento de um projeto que consiste no ranqueamento de perguntas mais frequentes pela comunidade.
 
@@ -29,8 +30,7 @@ O letmeask foi pensado e desenvolvido como forma de ajudar no dialogo entre pess
 ## :bulb: Conteúdos abordados
 <br />
 
-- NextJS
-- React
+- ReactJS
 - Sass
 - Context API's
 - React hooks
@@ -42,7 +42,7 @@ O letmeask foi pensado e desenvolvido como forma de ajudar no dialogo entre pess
 ## :rocket: Implementações extras
 <br />
 
-Foram adicionados algumas funcionalidades extras afim de melhorar o projeto, lembarndo que este projeto doi desewnvolvido utilizando o NextJS como base. 
+Foram adicionados algumas funcionalidades extras afim de melhorar o projeto, lembarndo que este projeto doi desewnvolvido utilizando o ReactJS como base. 
 Dentre as funcionalidades extras estão:
 
 - Toasts de Avisos do sistemas utilizando o react-toast.
