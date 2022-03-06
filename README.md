@@ -24,7 +24,7 @@ O letmeask foi pensado e desenvolvido como forma de ajudar no dialogo entre pess
 
 ##Versão Web:
 
-https://github.com/Danielgsouza/letmeask-project/blob/main/src/assets/images/Home.png
+!.[web].(https://github.com/Danielgsouza/letmeask-project/blob/main/src/assets/images/Home.png)
 <br />
 
 
