@@ -19,13 +19,7 @@
 ## :bookmark: Resumo
 <br />
 
-Já pensou que em lives as pessoas recebem muitas perguntas, principalmente quando se ensina alguma coisa,
-ou apresenta algum produto/serviço? - Pois é, são várias perguntas e os apresentadores das lives tem que
-responder as perguntas, afinal, são clientes/possívels clientes não é mesmo?
-
-Sabendo dessa necessidade, a #Rocketseat no seu evento #NextLevelWeek teve a brilhante idéaia de elaborar 
-um projeto que consiste no ranqueamento de perguntas para que as perguntas prioritárias dos aprensetadores
-das lives sejam as mais ranqueadas ou seja, as dúvidas que são mais frequentes pela comunidade.
+O letmeask foi pensado e desenvolvido como forma de ajudar no dialogo entre pessoas que precisam tirar dúvidas sobre um determinado assunto. Pensando nisso a #rocketseat realizou um evento chamado #NextLevelWeek que teve como objetivo justamente o desenvolvimento de um projeto que consiste no ranqueamento de perguntas mais frequentes pela comunidade.
 
 
 
